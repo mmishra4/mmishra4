@@ -1,1 +1,43 @@
+“what — so what” formula, if applicable. This formula helps you to articulate
+What the answer is (80%),
+What it can do and what the advantages or disadvantages are (20%).
 
+1)P-values
+The most technical and precise definition of a p-value is that it is the probability of achieving a result that’s just as extreme or more extreme than the result if the null hypothesis is too.
+If you think about it, this makes sense. In practice, if the p-value is less than the alpha, say of 0.05, then we’re saying that there’s a probability of less than 5% that the result could have happened by chance. Similarly, a p-value of 0.05 is the same as saying “5% of the time, we would see this by chance.”
+So if the initial definition doesn’t stick with you, remember the example I just gave above!
+2) Confidence Intervals and Hypothesis Testing
+Confidence intervals and hypothesis testing share a very close relationship. The confidence interval suggests a range of values for an unknown parameter and is then associated with a confidence level that the true parameter is within the suggested range of. Confidence intervals are often very important in medical research to provide researchers with a stronger basis for their estimations.
+A confidence interval can be shown as “10 +/- 0.5” or [9.5, 10.5] to give an example.
+Hypothesis testing is the basis of any research question and often comes down to trying to prove something did not happen by chance. For example, you could try to prove when rolling a dye, one number was more likely to come up than the rest.
+3) Z-tests vs T-tests
+Understanding the differences between z-tests and t-tests as well as how and when you should choose to use each of them is invaluable in statistics.
+A Z-test is a hypothesis test with a normal distribution that uses a z-statistic. A z-test is used when you know the population variance or if you don’t know the population variance but have a large sample size.
+A T-test is a hypothesis test with a t-distribution that uses a t-statistic. You would use a t-test when you don’t know the population variance and have a small sample size.
+4) Linear regression and its assumptions
+The line of best fit is found by minimizing the squared distances between the points and the line of best fit — this is known as minimizing the sum of squared residuals. A residual is simply equal to the predicted value minus the actual value.
+There are four assumptions associated with a linear regression model:
+Linearity: The relationship between X and the mean of Y is linear.
+Homoscedasticity: The variance of the residual is the same for any value of X.
+Independence: Observations are independent of each other.
+Normality: For any fixed value of X, Y is normally distributed.
+5) Logistic regression
+Logistic regression is similar to linear regression but is used to model the probability of a discrete number of outcomes, typically two
+6) Sampling techniques
+There are 5 main ways that you can sample data: Simple Random, Systematic, Convenience, Cluster, and Stratified sampling:
+Stratified random sampling starts off by dividing a population into groups with similar attributes. Then a random sample is taken from each group. This method is used to ensure that different segments in a population are equally represented. To give an example, imagine a survey is conducted at a school to determine overall satisfaction. It might make sense here to use stratified random sampling to equally represent the opinions of students in each department.
+7) Central Limit Theorem
+The central limit theorem is very powerful — it states that the distribution of sample means approximates a normal distribution.
+8) Combinations and Permutations
+Combinations and permutations are two slightly different ways that you can select objects from a set to form a subset. Permutations take into consideration the order of the subset whereas combinations do not.
+9) Bayes Theorem/Conditional Probability
+Bayes theorem is a conditional probability statement, essentially it looks at the probability of one event (B) happening given that another event (A) has already happened.
+10) Probability Distributions
+A probability distribution is an easy way to find your probabilities of different possible outcomes in an experiment. There are many different distribution types you should learn about but a few I would recommend are Normal, Uniform, and Poisson.
+i. The normal distribution, also known as the Gaussian distribution, 
+is a bell-shaped curve that is quite prominent in many distributions, including the height of people and IQ scores.
+The mean of the normal distribution is equal to μ and the variance is equal to σ.
+ii. Poisson Distribution:
+is a discrete distribution that gives the probability of the number of independent events occurring in a fixed time. An example of when you would use this is if you want to determine the likelihood of X patients coming into a hospital in a given hour.
+The mean and variance are both equal to λ.
+iii. A uniform distribution is used when all outcomes are equally likely. For example, a coin has a uniform distribution as well as a dye.
