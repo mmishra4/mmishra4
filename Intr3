@@ -1,0 +1,80 @@
+In what situation would you consider the mean over the median?
+The mean is better to compute than the median when the distribution is more-or-less symmetrical because it uses all data points, so it is better in the sense of completeness. Similarly, the mean is also a better representation than the median where outliers are not present.
+2. What is the standard error of the mean?
+
+The equation for standard error
+The standard error (SE) of the mean is simply the standard deviation of the sample means. It’s a measure of the discrepancy in the sample mean compared to the population mean.
+3. There are four people in an elevator and four floors in a building. What’s the probability that each person gets off on a different floor?
+If all four people start on the ground floor and there are three more floors, then by pigeon hole principle, the probability of each person getting off on a different floor is 0, unless one person gets off on the ground floor (doesn’t go up).
+In that case, the probability is 4!/(4⁴). In general, this question can be thought of as drawing counts from a multinomial distribution with n=4 and the discrete distribution parameters = (1/4, 1/4, 1/4, 1/4). Let x0, x1, x2, and x3 be the counts of people getting off at floors 0 to 3 respectively. And x_i >=0 and sum of x_i = 4 (as there are 4 people). So Pr(x) = (n!/(x0! x1! x2! x3!) ) p0^x0 … p3^x3. Plugging in the appropriate values you get 4!/(4⁴).
+Be sure to SUBSCRIBE here to never miss another article on data science guides, tricks and tips, life lessons, and more!
+4A. I have a deck and take one card at random. What is the probability you guess it right?
+Since there are 52 cards in a deck, the odds are 1/52.
+4B. CONTINUED: Then I give you two questions and you can only ask one: a — is the card red b — is the card 10 spades Which one would you ask and why?
+A. The odds for A is ½ but the odds for 10 of spades is 1.52.
+6. Explain a probability distribution that is not normal and how to apply that.
+Another distribution is the Poisson distribution with lambda as a parameter, which represents the arrival rate. This distribution is used when you want to model the probability of a number of units “arriving” in a given timeframe.
+For example, you can use a Poisson distribution if you want to model the number of cars that enter a car wash from 9–5 on a weekday so that you can estimate how much revenue a car wash makes on average in a workweek.
+7. Make an unfair coin fair.
+An unfair coin is a coin where the odds of landing heads vs tails is not 50–50. For example, it may be a 70–30 odds. In this case, to make the coin fair, you would flip the coin twice and bet on one of two options: whether the coin will land heads then tails or tails and then heads. If both coin flips are heads or tails then you’d re-flip the coins.
+8. If two predictors are highly correlated, what is the effect on the coefficients in the logistic regression?
+When two predictors are highly correlated, this is known as multicollinearity. When multicollinearity is present, there are several consequences as a result:
+One, the coefficients of the regression function will be super sensitive if one of the values of one of the predicts changes only a little bit — in other words, it’s very volatile.
+And two, the variance of the coefficients will be inflated making it hard to detect statistical significance, meaning that the F statistic may be significant but all individual t-statistics aren’t.
+9. What are the confidence intervals of the coefficients?
+The coefficient confidence intervals give us a range that each regression coefficient will be in with a 100*(1-a)% confidence.
+10. What is the assumption of error in linear regression?
+Error in linear regression, also known as the residuals, assumes the following:
+Linearity Assumption: the means of the expected value of the errors is zero.
+Constant variance assumption: the residuals have a constant variance
+Independence assumption: the residuals are independent of one another
+Lastly, the residuals are normally distributed.
+Be sure to SUBSCRIBE here to never miss another article on data science guides, tricks and tips, life lessons, and more!
+11. For sample size n, the margin of error is 3. How many more samples do we need to make the margin of error to 0.3?
+
+The formula to get the margin of error (MOE) is shown above. The equation can be re-written to solve for sample size, n:
+
+Sub MOE = 0.3 and the respective z-score and standard deviation to get the desired sample size to achieve a MOE of 0.3.
+12. Outcome of an experiment 5% of one group clicks more. Is that a good result?
+This question cannot be answered because not enough information is provided. In addition to the outcome, the result also depends on the significance level, which is determined prior to conducting the experiment.
+13. You notice that the number of users that clicked on a search result about a Facebook Event increased 10% week-over-week. How would you investigate? How do you decide if this is a good thing or a bad thing?
+Since this can be answered in many ways, and quite frankly can take a long time to answer, I’ll explain what I believe are the two main points to touch on. But even before touching on these two points, in an actual interview, you should investigate and ask more questions to try to get more information out of the interviewer. For example, “how long did this increase persist?” or “are there any significant events that happened before this?”
+Once you’ve asked your questions, you should have a methodical approach as to how you would investigate the 10% increase WoW. In consulting, there is something called a Mutually Exclusive Collectively Exhaustive (MECE) framework that you can use to organize your thoughts and address the problem thoroughly.
+The second thing to consider is defining what a “good thing” and “bad thing” is. Does “good” mean more engagement or something else? Make sure you define these before providing a final answer.
+Check out this article to see an example answer.
+14. The Events team wants to up-rank Events such that they show up higher in Search. How would you determine if this is a good idea or not?
+You can perform an A/B test to see if the variant causes a significant difference in the specified primary metric. In this case, the primary metric could be the number of users who clicked on events.
+Be sure to SUBSCRIBE here to never miss another article on data science guides, tricks and tips, life lessons, and more!
+15. How do you write a t-test in Python?
+Using the scipy library, you could write the following:
+import pandas as pd
+import scipy.stats as stats
+stats.ttest_ind(df['result'][df['category'] == 'control'],
+                df['result'][df['category'] == 'treatment'])
+Likewise, see here if you want to code a t-test from scratch.
+16. Given a single day with a large sample size and a significant test result, would you end the experiment?
+This ultimately depends on whether the collected sample size is as big or bigger than the predetermined required sample size when building the experiment. If it’s not as big, then ending this experiment early can result in claiming significance when there actually isn’t any real significance. This is known as repeated significance testing errors.
+17. Explain random forest, discuss its pros and cons
+
+image created by Author
+In essence, the random forest algorithm is an ensemble learning algorithm that makes predictions by using multiple decision trees instead of one. By doing so, it’s able to make decisions based on a “majority-wins” system, treating each decision tree as an individual voter.
+The pros of this are that it makes it much more accurate than a decision tree because it’s less prone to the risk of error that one tree would make by itself. As a consequence, it also makes it less biased and reduces the variability of the model.
+The downside to this model is that it’s not as intuitive to understand how the model gets to the output, making it seem like a “black box” model.
+18. Why can L1 shrink weights to 0 but not L2?
+Since L2 minimizes the sum of the square of weights, it cares more about reducing large weights more than small weights. This means that it rarely focuses on pushing small weights to zero.
+L1 on the other hand has no preference between reducing large or small weights because it minimizes the sum of the absolute value of the weights. Therefore, whether it pushes a weight down from 1000 to 999 or 1 to 0 is the same.
+19. What is the difference between bagging and boosting?
+Bagging is a process in which multiple iterations of the same model are trained with bootstrapped samples.
+
+Image created by Author
+Boosting is a more advanced version of bagging where each model is built sequentially, iterating over the previous one and learning from the previous mistakes made.
+
+Image created by Author
+20. What is AUC used for?
+The AUC, or Area Under the Curve, is an evaluation metric used to assess how good a classifier is at distinguishing different classes — the higher the better.
+21. How would you explain p-value to a non-technical person?
+Essentially, the p-value tells us the probability that a given outcome could have happened by chance. For example, a p-value of 0.05 is the same as saying “we would see this by chance 5% of the time”.
+22. Where are mean and median values for a right-skew and left-skew distribution compared to symmetrical normal bell shape?
+For a symmetrical normal distribution, the mean is equal to the median.
+For a right skew, the mean is greater than the median.
+For a left skew, the mean is less than the median.
